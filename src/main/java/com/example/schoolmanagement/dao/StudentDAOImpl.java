@@ -40,4 +40,10 @@ public class StudentDAOImpl implements StudentDAO{
     public void deleteById(int id) {
         entityManager.remove(findById(id));
     }
+
+    @Override
+    public List<Student> findByName(String name) {
+        TypedQuery<Student> typedQuery = entityManager.createQuery("from Student where name ="+name,Student.class);
+        return typedQuery.getResultList();
+    }
 }

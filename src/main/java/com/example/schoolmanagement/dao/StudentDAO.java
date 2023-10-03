@@ -9,4 +9,5 @@ public interface StudentDAO {
     Student findById(int id);
     Student save(Student student);
     void deleteById(int id);
+    List<Student> findByName(String name);
 }
